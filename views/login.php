@@ -17,15 +17,10 @@
    <title>Authentication-App</title>
 </head>
 <body>
-   <form action="" class="m-3" method="POST">
-      <img src="/assets/devchallenges.svg" alt="" class="icon-dev">
+   <form action="" class="m-3 form-login" method="POST">
+      <img src="/assets/devchallenges.svg" alt="" class="dev-login">
       <div>
-         <p class="parrafo1">Join thousands of learners from
-            around the world
-         </p>
-         <p class="parrafo2">Master web development by making real-life
-            proyects. There are multiple paths for you to choose
-         </p>
+         <h2 class="titulo1">Login</h2>
       </div>
       <div class="input">
          <img src="/assets/email.svg" alt="" class="email-icon">
@@ -45,7 +40,7 @@
          <img src="/assets/Twitter.svg" alt="">
          <img src="/assets/Gihub.svg" alt="">
       </div>
-      <p class="parrafo4">Already a member? <a class="login" href="/views/login.php" >Login</a></p>
+      <p class="parrafo4">Don't have an account yet? <a class="login" href="/index.html" >Register</a></p>
    </form>
 </body>
 </html>
