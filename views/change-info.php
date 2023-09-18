@@ -79,7 +79,7 @@ $name=$result["nombre"];
                <input type="text" class="form-control name" name="name" id="name" placeholder="Enter your name..." value="<?= $result["nombre"]?>">
             
                <label class="form-label">Bio</label>
-               <input type="text" class="form-control bio" name="bio" id="bio" placeholder="Enter your bio..." value="<?= $result["bio"]?>">
+               <textarea type="text" class="form-control bio" name="bio" id="bio" placeholder="Enter your bio..." value="<?= $result["bio"]?>"></textarea>
             
                <label class="form-label">Phone</label>
                <input type="text" class="form-control phone" name="phone" id="phone" placeholder="Enter your phone..." value="<?= $result["phone"]?>">
