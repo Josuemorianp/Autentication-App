@@ -63,6 +63,26 @@ li > img{
    border-top: 1 solid #E0E0E0;
 }
 
+.perfil-name{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+.bar-name{
+   color: var(--Gray-1, #333);
+   font-family: Noto Sans;
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: -0.42px;
+   padding-top: 10px;
+}
+
 .dropdown-menu{
    width: 188px;
    height: 174px;
@@ -111,6 +131,10 @@ background-color: transparent;
 
 .dropdown{
    margin: 2.3rem 5rem 0 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
 }
 
 .personal-info{
@@ -286,6 +310,7 @@ background-color: transparent;
    font-weight: 400;
    line-height: normal;
    letter-spacing: -0.63px;
+   text-decoration: none;
 }
 
 .title2{
@@ -382,4 +407,21 @@ background-color: transparent;
    font-weight: 500;
    line-height: normal;
    letter-spacing: -0.56px;
+}
+
+.user_information{
+   color: #333;
+   font-family: Noto Sans;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.63px;
+   text-align: justify;
+   margin-top: 20px;
+   margin-left: 1rem;
+}
+
+.label{
+   width: 100px;
 }

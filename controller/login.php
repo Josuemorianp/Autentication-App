@@ -18,12 +18,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       if (password_verify($contrasena, $result["contrasena"])) {
          session_start();
 
-         $_SESSION["email"] = $email;
-         $_SESSION["contrasena"] = $contrasena;
+         $_SESSION["user_data"] = $result;
          header("Location: /views/personal_info.php");
       }else{
+         session_start();
+
+         $_SESSION["invalida"] = true;
          echo "<script> alert('Error de validación de usuario'); </script>";
-         // header("Location: /views/login.php");
+         header("Location: /views/login.php");
       }
    }
    

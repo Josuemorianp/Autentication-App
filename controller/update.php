@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"]=== "POST"){
 
    $new_hash = password_hash($new_contrasena, PASSWORD_DEFAULT); // si no la pongo la vuelvo a embarrar
 
-   require_once($_SERVER["DOCUMENT_ROOT"]."/config/database.php");
+   require_once($_SERVER["DOCUMENT_ROOT"] . "/controller/database.php");
 
    try{
       $result=$mysqli->query("UPDATE usuarios SET nombre='$new_name',bio='$new_bio', phone='$new_phone', email='$new_email', contrasena='$new_contrasena', photo=$new_photo WHERE id=$id");

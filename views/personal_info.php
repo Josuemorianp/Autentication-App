@@ -2,6 +2,7 @@
    session_start();
 
    if(!isset($_SESSION["user_data"])){
+      echo"<script>alert('Debes iniciar sesión primero')</script>";
       header("Location: /views/login.php");
       die();
    }
@@ -26,16 +27,36 @@
    <title>Authentication-App</title>
 </head>
 <body>
+   <?php
+   $id = $_SESSION["user_data"]["id"];
+
+   require_once($_SERVER["DOCUMENT_ROOT"] . "/controller/database.php");
+   $stmnt = $mysqli -> query("SELECT * FROM usuarios WHERE id='$id'");
+   $result = $stmnt -> fetch_assoc();
+   $name=$result["nombre"];
+
+   $name = ($result["nombre"] != NULL)? $result["nombre"]:"Add your name";
+   $bio = ($result["bio"] != NULL)? $result["bio"]:"Add your name";
+   $phone = ($result["phone"] != NULL)? $result["phone"]:"Add your phone";
+   $email = ($result["email"] != NULL)? $result["email"]:"Add your email";
+   $contrasena = $_SESSION["user_data"]["contrasena"];
+   $photo = ($result["photo"] != NULL)? $result["photo"]:"Add a profile photo";
+
+      ?>
    <div class="header">
-      <img src="/assets/devchallenges.svg" alt="" class="logo-profile">
+   <img src="/assets/devchallenges.svg" alt="" class="logo-profile">
+      
       <div class="dropdown">
-         <img src="" alt="perfil-photo" class="mini-photo">
+         <div class="perfil-name">
+            <img src="/assets/perfil.jpg" width="30" alt="perfil-photo" class="mini-photo">
+            <p class="bar-name"><strong><?= $name?></strong></p>
+         </div>
          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
          <ul class="dropdown-menu">
-            <li><img src="/assets/perfil.svg" alt="profile" class="icon-drop"><a class="dropdown-item" type="button">My Profile</a></li>
-            <li><img src="/assets/group.svg" alt="group" class="icon-drop"><a class="dropdown-item" type="button">Group Chat</a></li>
+            <li><img src="/assets/perfil.svg" alt="profile" class="icon-drop"><a class="dropdown-item" href="/views/personal_info.php" type="button">My Profile</a></li>
+            <li><img src="/assets/group.svg" alt="group" class="icon-drop"><a href="" class="dropdown-item" type="button">Group Chat</a></li>
             <br>
-            <li class="li-exit"><img src="/assets/exit.svg" alt="exit" class="exit"><a href="/index.php" class="dropdown-item" type="button">Logout</a></li>
+            <li class="li-exit"><img src="/assets/exit.svg" alt="exit" class="exit"><a href="/controller/logout.php" class="dropdown-item" type="button">Logout</a></li>
          </ul>
       </div>
    </div>
@@ -45,21 +66,7 @@
          <p class="parrafo5">Basic info, like your name and photo</p>
       </div>
       
-      <?php
-      $id = $_SESSION["user_data"]["id"];
-
-      require_once($_SERVER["DOCUMENT_ROOT"] . "/controller/database.php");
-      $stmnt = $mysqli -> query("SELECT * FROM usuarios WHERE id='$i'");
-      $result = $stmnt -> fetch_assoc();
-
-      $name = ($result["name"] != NULL)? $result["nombre"]:"Add your name";
-      $bio = ($result["bio"] != NULL)? $result["bio"]:"Add your name";
-      $phone = ($result["phone"] != NULL)? $result["phone"]:"Add your phone";
-      $email = ($result["email"] != NULL)? $result["email"]:"Add your email";
-      $contrasena = $_SESSION["user_data"]["contrasena"];
-      $photo = ($result["photo"] != NULL)? $result["photo"]:"Add a profile photo";
-
-      ?>
+      
       
       <form  action="/controller/edit.php" class="profile-box" method="POST">
          <div class="profile-edit">
@@ -72,28 +79,28 @@
             </a>
          </div>
          <div class=" tabla profile-photo">
-            <label for="">PHOTO</label>
-            <p><?php echo"<p class='useri'> $photo</p>"?></p>
+            <label class="label" for="">PHOTO</label>
+            <p name="photo"><?php echo"<p class='user_information'> $photo</p>"?></p>
          </div>
          <div class="tabla profile-name">
-            <label for="">NAME</label>
-            <p><?php echo"<p class='useri'> $name</p>"?></p>
+            <label class="label" for="">NAME</label>
+            <p><?php echo"<p class='user_information'> $name</p>"?></p>
          </div>
          <div class="tabla profile-bio">
-            <label for="">BIO</label>
-            <p><?php echo"<p class='useri'> $bio</p>"?></p>
+            <label class="label" for="">BIO</label>
+            <p><?php echo"<p class='user_information'> $bio</p>"?></p>
          </div>
          <div class="tabla profile-phone">
-            <label for="">PHONE</label>
-            <p><?php echo"<p class='useri'> $phone</p>"?></p>
+            <label class="label" for="">PHONE</label>
+            <p><?php echo"<p class='user_information'> $phone</p>"?></p>
          </div>
          <div class="tabla profile-email">
-            <label for="">EMAIL</label>
-            <p><?php echo"<p class='useri'> $email</p>"?></p>
+            <label class="label" for="">EMAIL</label>
+            <p><?php echo"<p class='user_information'> $email</p>"?></p>
          </div>
          <div class="tabla profile-password">
-            <label for="">PASSWORD</label>
-            <p><?php echo"<p class='useri'> $contrasena</p>"?></p>
+            <label class="label" for="">PASSWORD</label>
+            <p><?php echo"<p class='user_information'> $contrasena</p>"?></p>
          </div>
       </form>
    </main>
