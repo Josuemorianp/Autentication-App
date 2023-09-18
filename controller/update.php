@@ -1,35 +1,25 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"]=== "POST"){
 
+   session_start();
+   extract($_POST);
    $id = $_POST["id"];
-   $new_name = ($_POST["name"]);
-   $new_bio = ($_POST["bio"]);
-   $new_phone = $_POST["phone"];
-   $new_email = $_POST["email"];
-   $new_contrasena = $_POST["contrasena"];
-   $new_photo = $_POST["photo"];
-
-   $new_hash = password_hash($new_contrasena, PASSWORD_DEFAULT); // si no la pongo la vuelvo a embarrar
 
    require_once($_SERVER["DOCUMENT_ROOT"] . "/controller/database.php");
 
-   try{
-      $result=$mysqli->query("UPDATE usuarios SET nombre='$new_name',bio='$new_bio', phone='$new_phone', email='$new_email', contrasena='$new_contrasena', photo=$new_photo WHERE id=$id");
+   $name !== "" && $mysqli -> query("UPDATE usuarios SET nombre='$name' WHERE id='$id'");
+   $bio !== "" && $mysqli -> query("UPDATE usuarios SET bio='$bio' WHERE id='$id'");
+   $phone !== "" && $mysqli -> query("UPDATE usuarios SET phone='$phone' WHERE id='$id'");
+   $email !== "" && $mysqli -> query("UPDATE usuarios SET email='$email' WHERE id='$id'");
 
-      if($result){
-         header("location:/views/dashboard.php");
-      }else{
-         echo"error: ". $e->getMessage();;
-      }
-   }catch(mysqli_sql_exception $e){
-      if($mysqli->errno === 1062){
-         session_start();
-         
-         $_SESSION["duplicado"]=true; 
-         header("Location: /views/personal-info.php");
-      }else{
-         echo"error: ". $e->getMessage();
-      }
+   if ($contrasena !== "") {
+      $hash = password_hash($contrasena, PASSWORD_DEFAULT);
+      $mysqli -> query("UPDATE usuarios SET contrasena='$hash' WHERE id='$id'");
    }
+
+   $stmnt = $mysqli -> query("SELECT * FROM usuarios WHERE id='$id'");
+   $_SESSION["user_data"]=$stmnt -> fetch_assoc();
+
+   header("location:/views/personal_info.php");
 }
 ?>

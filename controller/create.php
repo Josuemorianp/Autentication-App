@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
    if($email === ""){
       echo "<script> alert('Por favor ingrese un correo electronico'); </script>";
-      header("Location: /index.php");
+      // header("Location: /index.php");
    }
 
    try {
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          session_start();
 
          $_SESSION["duplicado"] = "<script> alert('Correo ya existe, favor agregar otro correo'); </script>";
-         header("Location: /views/index.php");
+         header("Location: /index.php");
 
       }else{
          echo "Error: " . $e->getMessage();
