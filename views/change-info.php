@@ -71,7 +71,7 @@ $name=$result["nombre"];
             <div class="change-photo">
                <input type="number" name="id" hidden value="<?php echo $result["id"]?>"> 
                <img src="/assets/perfil.jpg" alt="photo-perfil" class="perfil-img">
-               <label for="" class="change-label">CHANGE PHOTO</label>
+               <a href="/views/imagenes.php" class="change-img">CHANGE PHOTO</a>
                <input type="file" name="photo" accept="iamage/jpeg, image/png " hidden>
             </div>
             <div class="mb-3">
