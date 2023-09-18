@@ -17,7 +17,17 @@
    <title>Authentication-App</title>
 </head>
 <body>
-   <form action="" class="m-3" method="POST">
+   <?php
+   session_start();
+   
+   if (isset($_SESSION["duplicado"])) {
+      echo "<script> alert('Correo ya existe, favor agregar otro correo'); </script>";
+
+      unset($_SESSION["duplicado"]);
+   }
+   ?>
+
+<form action="/controller/create.php" class="m-3" method="POST">
       <img src="/assets/devchallenges.svg" alt="" class="icon-dev">
       <div>
          <p class="parrafo1">Join thousands of learners from
@@ -29,15 +39,14 @@
       </div>
       <div class="input">
          <img src="/assets/email.svg" alt="" class="email-icon">
-         <input type="email" name="email" id="" placeholder="Email">
+         <input type="email" name="email" id="email" placeholder="Email" class="form-control">
       </div>
       <div class="input">
          <img src="/assets/lock.svg" alt="" class="lock-icon">
-         <input class="" type="password" name="" id="pass" placeholder="Password">
+         <input class="form-control" type="password" name="contrasena" id="contrasena" placeholder="Password">
       </div>
       
-      <button class="btn btn-primary" type="button">Start codind now</button>
-      
+      <button class="btn btn-primary" type="submit">Start codind now</button>
       <p class="parrafo3">or continue wirh these social profile</p>
       <div class="login-icon">
          <img src="/assets/Google.svg" alt="">

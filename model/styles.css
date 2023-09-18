@@ -72,9 +72,14 @@ form{
    margin-bottom: 1rem;
 }
 
-input{
+.form-control{
+   width: 300px;
+   height: 30px;
    border: none;
-   margin-left: 10px;
+}
+.form-control-lg:focus{
+   border: none;
+   outline: none;
 }
 
 .email-icon{
@@ -175,5 +180,3 @@ input{
    letter-spacing: -0.63px;
    margin-bottom: 1.4rem;
 }
-
-/*****   PERSONAL INFORMATION   *****/

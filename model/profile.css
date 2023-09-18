@@ -1,0 +1,385 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+main{
+   padding-bottom: 16rem;
+}
+
+li{
+   display: flex;
+   flex-direction: row;
+   justify-content: left;
+   align-items: center;
+   margin: .8rem .7rem 1rem;
+}
+li::hover{
+   width: 164.118px;
+   height: 39.151px;
+   flex-shrink: 0;
+   border-radius: 8px;
+   background: #F2F2F2;
+}
+
+li > a{
+   width: 95px;
+   height: 16px;
+   flex-shrink: 0;
+   color: var(--Gray-2, #4F4F4F);
+   font-family: Noto Sans;
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.42px;
+}
+
+li > img{
+   width: 20px;
+   height: 20px;
+   flex-shrink: 0;
+}
+
+.icon-drop{
+   width: 20px;
+   height: 20px;
+   flex-shrink: 0;
+   filter: invert(28%) sepia(16%) saturate(9%) hue-rotate(3deg) brightness(90%) contrast(79%);
+}
+
+.exit{
+   width: 20px;
+   height: 20px;
+   flex-shrink: 0;
+   filter: invert(78%) sepia(46%) saturate(6842%) hue-rotate(322deg) brightness(92%) contrast(100%);
+}
+
+.li-exit{
+   width: 164.118px;
+   height: 1px;
+   margin-top: 1.4rem;
+   border-top: 1 solid #E0E0E0;
+}
+
+.dropdown-menu{
+   width: 188px;
+   height: 174px;
+   flex-shrink: 0;
+   border-radius: 12px;
+   border: 1px solid #E0E0E0;
+   background: #FFF;
+   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+}
+.dropdown-toggle{
+   color: var(--Gray-1, #333);
+font-family: Noto Sans;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.42px;
+border: none;
+background-color: transparent;
+}
+
+.mini-photo{
+   width: 32px;
+   height: 36.69px;
+   flex-shrink: 0;
+   background: url(<path-to-image>), lightgray 50% / cover no-repeat, url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.header{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+.title-profile{
+   margin-top: 4.3rem;
+}
+
+.logo-profile{
+   width: 130.174px;
+   height: 18px;
+   flex-shrink: 0;
+   margin: 1.6rem 4.4rem;
+}
+
+.dropdown{
+   margin: 2.3rem 5rem 0 0;
+}
+
+.personal-info{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.title-profile{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.titulo1{
+   color: #000;
+   font-family: Noto Sans;
+   font-size: 36px;
+   font-style: normal;
+   font-weight: 400;
+   letter-spacing: -1.26px;
+}
+
+.parrafo5{
+   color: #000;
+   font-family: Noto Sans;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 300;
+   line-height: normal;
+   letter-spacing: -0.63px;
+   margin-bottom: 2.6rem;
+}
+
+.profile-edit{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding: 1.5rem 3rem 1.5rem 2.2rem;
+   align-items: center;
+   height: 7rem;
+   border-bottom: 1px solid #E0E0E0;
+}
+
+.title4{
+   color: #000;
+   font-family: Noto Sans;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -0.84px;
+}
+
+.parrafo6{
+   width: 463.246px;
+   height: 19.793px;
+   flex-shrink: 0;
+   color: #828282;
+   font-family: Noto Sans;
+   font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.455px;
+}
+
+.btn-light{
+   width: 95.343px;
+   height: 38px;
+   flex-shrink: 0;
+   border-radius: 12px;
+   border: 1px solid #828282;
+   color: #828282;
+   font-family: Noto Sans;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.56px;
+}
+
+.profile-box{
+   display: flex;
+   flex-direction: column;
+   width: 845.911px;
+   height: 580.543px;
+   flex-shrink: 0;
+   border-radius: 12px;
+   border: 1px solid #E0E0E0;
+   margin: 0 18rem 0 16rem;
+}
+
+.tabla{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   color: #BDBDBD;
+   font-family: Noto Sans;
+   font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.455px;
+   border-bottom: 1px solid #E0E0E0;
+   padding-left: 3rem;
+}
+
+.profile-photo{
+   width: 845.384px;
+   height: 6.3rem;
+}
+
+.profile-name{
+   width: 845.384px;
+   height: 4.5rem;
+}
+
+.profile-bio{
+   width: 845.384px;
+   height: 4.5rem;
+}
+.profile-phone{
+   width: 845.384px;
+   height: 4.5rem;
+}
+.profile-email{
+   width: 845.384px;
+   height: 4.6rem;
+}
+.profile-password{
+   width: 845.384px;
+   height: 4.8rem;
+   border-bottom: none;
+}
+
+/*****      EDIT PAGE      *****/
+
+.edit-box{
+   display: flex;
+   flex-direction: column;
+   width: 845.911px;
+   height: 827.563px;
+   flex-shrink: 0;
+   border-radius: 12px;
+   border: 1px solid #E0E0E0;
+   margin: 0 18rem 0 16rem;
+   padding: 1.8rem 2.9rem;
+}
+.back-arrow{
+   display: flex;
+   flex-direction: row;
+   width: 845.911px;
+   justify-content:left;
+   align-items: center;
+   margin-right: 2rem;
+   margin-bottom: 1.5rem;
+}
+
+.arrow{
+   width: 18px;
+   height: 18px;
+   flex-shrink: 0;
+   filter: invert(58%) sepia(23%) saturate(4098%) hue-rotate(173deg) brightness(92%) contrast(86%);
+}
+
+.back{
+   color: #2D9CDB;
+   font-family: Noto Sans;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -0.63px;
+}
+
+.title2{
+   color: #000;
+   font-family: Noto Sans;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -0.84px;
+}
+
+.parrafo7{
+   color: #828282;
+   font-family: Noto Sans;
+   font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.455px;
+   width: 463.246px;
+   height: 19.793px;
+   flex-shrink: 0;
+}
+.change-photo{
+   margin-bottom: 2rem;
+}
+
+.perfil-img{
+   width: 72px;
+   height: 72px;
+   flex-shrink: 0;
+   border-radius: 8px;
+   background: rgba(0, 0, 0, 0.20);
+}
+
+.change-label{
+   color: #828282;
+   font-family: Noto Sans;
+   font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.455px;
+}
+
+.textarea{
+   width: 416.932px;
+   height: 52px;
+   flex-shrink: 0;
+   width: 416.932px;
+   height: 52px;
+   flex-shrink: 0;
+   background-color: aqua;
+}
+.form-label{
+   color: #4F4F4F;
+   font-family: Noto Sans;
+   font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.455px;
+}
+
+.form-control{
+   border-radius: 12px;
+   border: 1px solid #828282;
+}
+
+.name{
+   width: 316.932px;
+   height: 52px;
+   flex-shrink: 0;
+}
+.bio{
+   width: 316.932px;
+   height: 91.578px;
+   flex-shrink: 0;
+}
+.phone, .email, .password {
+   width: 316.932px;
+   height: 52px;
+   flex-shrink: 0;
+}
+.btn-save{
+   width: 82px;
+   height: 38px;
+   flex-shrink: 0;
+   color: #FFF;
+   font-family: Noto Sans;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: -0.56px;
+}

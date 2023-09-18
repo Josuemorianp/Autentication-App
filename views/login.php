@@ -17,30 +17,41 @@
    <title>Authentication-App</title>
 </head>
 <body>
-   <form action="" class="m-3 form-login" method="POST">
+   <form action="/controller/login.php" class="m-3 form-login" method="POST">
       <img src="/assets/devchallenges.svg" alt="" class="dev-login">
       <div>
          <h2 class="titulo1">Login</h2>
       </div>
       <div class="input">
          <img src="/assets/email.svg" alt="" class="email-icon">
-         <input type="email" name="email" id="" placeholder="Email">
+         <input type="email" name="email" placeholder="Email" class="form-control" require>
       </div>
       <div class="input">
          <img src="/assets/lock.svg" alt="" class="lock-icon">
-         <input class="" type="password" name="" id="pass" placeholder="Password">
+         <input class="form-control" type="password" name="contrasena" placeholder="Password" require>
       </div>
       
-      <button class="btn btn-primary" type="button">Start codind now</button>
-      
+      <button class="btn btn-primary" type="submit">Start codind now</button>
+
       <p class="parrafo3">or continue wirh these social profile</p>
-      <div class="login-icon">
-         <img src="/assets/Google.svg" alt="">
-         <img src="/assets/Facebook.svg" alt="">
-         <img src="/assets/Twitter.svg" alt="">
-         <img src="/assets/Gihub.svg" alt="">
-      </div>
-      <p class="parrafo4">Don't have an account yet? <a class="login" href="/index.html" >Register</a></p>
+   <div class="login-icon">
+      <img src="/assets/Google.svg" alt="">
+      <img src="/assets/Facebook.svg" alt="">
+      <img src="/assets/Twitter.svg" alt="">
+      <img src="/assets/Gihub.svg" alt="">
+   </div>
+   <p class="parrafo4">Don't have an account yet? <a class="login" href="/index.php" >Register</a></p>
+      
    </form>
+
+   <!-- <?php
+   session_start();
+
+   if(isset($_SESSION["invalida"])){
+      echo "<script> alert('Error de validación de usuario'); </script>";
+   	unset($_SESSION["invalida"]);
+   }
+   ?> -->
+   
 </body>
 </html>
